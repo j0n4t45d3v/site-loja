@@ -4,14 +4,13 @@ import './body.css';
 
 export function Body() {
   const [product, setProduct] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     api.get(url).then((res) => setProduct(res.data.products));
   }, []);
 
   function addCart(id) {
-    setCart(id, ...cart);
+    sessionStorage.setItem('cart', id)
   }
   return (
     <div className="container-body">
@@ -21,7 +20,7 @@ export function Body() {
             <img className="thumbnail" src={e.thumbnail} alt="" />
             <h4 className='title-product'>{e.title}</h4>
             <p className='description'>{e.description}</p>
-            <button className='add-cart'>+</button>
+            <button className='add-cart' onClick={addCart(e.id)}>+</button>
           </div>
         );
       })}
