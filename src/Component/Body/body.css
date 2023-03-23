@@ -4,7 +4,7 @@
   width: 100%;
   justify-content: space-around;
   align-items: center;
-background-color: #ffdcff3b;
+  background-color: #ffdcff3b;
   gap: 20px;
 }
 
@@ -22,20 +22,21 @@ background-color: #ffdcff3b;
 
 .thumbnail {
   align-self: center;
-  width: 40%;
+  height: 100px;
+  object-fit: contain;
 }
 
-.title-product{
+.title-product {
   text-align: center;
 }
 
-.description{
+.description {
   width: 90%;
   text-align: center;
   align-self: center;
 }
 
-.add-cart{
+.add-cart {
   cursor: pointer;
   width: 50%;
   align-self: center;
@@ -44,10 +45,10 @@ background-color: #ffdcff3b;
   background-color: #d9b1d9;
   color: white;
   font-size: medium;
-  transition: .6s;
+  transition: 0.6s;
 }
 
-.add-cart:hover{
+.add-cart:hover {
   transform: scale(1.1);
-  transition: .3s;
+  transition: 0.3s;
 }
