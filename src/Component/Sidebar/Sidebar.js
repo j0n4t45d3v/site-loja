@@ -17,6 +17,8 @@ export function Sidebar({ closeSidebar, products }) {
     })();
   }, [products]);
 
+  let sum = 0;
+
   return (
     <div className="sidebar">
       <button className="close" onClick={close}>
@@ -25,16 +27,17 @@ export function Sidebar({ closeSidebar, products }) {
       <div className="main-container">
         <div className="products-cart">
           {cart.map((e) => {
+            sum += e.price;
             return (
-              <div className='produt'>
-                <img className='img' src={e.thumbnail} alt="" />
+              <div className="produt">
+                <img className="img" src={e.thumbnail} alt="" />
                 <p>{e.title}</p>
               </div>
             );
           })}
         </div>
         <div className="final-cart">
-          <p>Total: </p>
+          <p>Total: {sum.toFixed(2)}</p>
           <button>Comprar</button>
         </div>
       </div>

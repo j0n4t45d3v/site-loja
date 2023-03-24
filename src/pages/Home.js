@@ -10,10 +10,7 @@ export function Home() {
   function productAddCart(cart) {
     setCarts([cart, ...carts]); 
   }
-  useEffect(()=>{
 
-    console.log(carts);
-  })
   function sidebar() {
     setOpenSidebar(!openSidebar);
   }
