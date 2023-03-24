@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './sidebar.css';
 
-export function Sidebar({ closeSidebar }) {
+export function Sidebar({ closeSidebar , products}) {
   const [cart, setCart] = useState([{}]);
 
   function close() {

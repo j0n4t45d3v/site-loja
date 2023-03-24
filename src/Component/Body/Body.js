@@ -21,7 +21,7 @@ export function Body({ addProductCart }) {
             <img className="thumbnail" src={e.thumbnail} alt="" />
             <h4 className="title-product">{e.title}</h4>
             <p className="description">{e.description}</p>
-            <p className="price-item">R$ {e.price}</p>
+            <p className="price-item">R$ {e.price.toFixed(2)}</p>
             <button className="add-cart" onClick={addCart(e)}>
               +
             </button>
