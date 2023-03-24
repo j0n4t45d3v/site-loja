@@ -1,0 +1,38 @@
+.sidebar{
+  display: flex;
+  background-color: white;
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.close{
+  border-radius: 100%;
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+.close:hover{
+  background-color: rgb(223, 0, 0);
+  transition: .6s;
+}
+
+.main-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.products-cart{
+  align-self: center;
+}

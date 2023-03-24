@@ -1,10 +1,10 @@
 .container-body {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  background-color: #ffdcff3b;
   gap: 20px;
 }
 
@@ -12,33 +12,35 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 300px;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
   background-color: white;
   padding: 20px;
   box-shadow: 2px 3px 10px #68316625;
 }
 
 .thumbnail {
-  align-self: center;
+
   height: 100px;
   object-fit: contain;
 }
 
 .title-product {
-  text-align: center;
+
 }
 
 .description {
   width: 90%;
-  text-align: center;
+
   align-self: center;
 }
 
 .add-cart {
   cursor: pointer;
   width: 50%;
-  align-self: center;
+
   border: none;
   border-radius: 3px;
   background-color: #d9b1d9;

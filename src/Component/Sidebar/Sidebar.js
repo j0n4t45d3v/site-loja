@@ -1,22 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import api, { url } from '../../service/api';
+import React, { useState } from 'react';
+import './sidebar.css';
 
-export function Sidebar (){
-  const [products, setProducts] = useState([])
+export function Sidebar({ closeSidebar }) {
+  const [cart, setCart] = useState([{}]);
 
-  useEffect(() => {
-    setProducts(sessionStorage.getItem("cart"))
-  },[])
+  function close() {
+    closeSidebar();
+  }
+  return (
+    <div className="sidebar">
+      <button className="close" onClick={close}>
+        x
+      </button>
+      <div className='main-container'>
 
-  console.log(products);
-  /* return  (
-   / <div className="sidebar">
-      {products.map( e =>{
-      return(
-        <div>
-          <img src={e.images} alt="" />
-        </div>
-      )} )}
-    </div> 
-  )  */
+      <div className="products-cart">
+        {cart.map((e) => {
+          return (
+            <>
+              <p>toiert</p>
+              <p>toiert</p>
+              <p>toiert</p>
+              <p>toiert</p>
+              <p>toiert</p>
+            </>
+          );
+        })}
+      </div>
+      <div className='final-cart'>
+        <p>Total: </p>
+        <button>Comprar</button>
+      </div>
+      </div>
+    </div>
+  );
 }
