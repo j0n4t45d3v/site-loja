@@ -17,7 +17,7 @@ export function Home() {
   return (
     <>
       {openSidebar ? <Sidebar closeSidebar={sidebar} products={carts}/> : false}
-      <Header openSidebar={sidebar}/>
+      <Header openSidebar={sidebar} quantityProducts={carts.length}/>
       <Body addProductCart={productAddCart}/>
     </>
   );
