@@ -15,15 +15,17 @@
   align-items: center;
   justify-content: center;
   width: 350px;
-  height: 350px;
+  height: 400px;
   background-color: white;
   padding: 20px;
   box-shadow: 2px 3px 10px #68316625;
+  margin-bottom: 20px;
 }
 
 .thumbnail {
 
-  height: 100px;
+  max-width: 300px;
+  max-height: 150px;
   object-fit: contain;
 }
 

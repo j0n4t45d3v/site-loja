@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Body } from '../Component/Body/Body';
 import { Header } from '../Component/Header/Header';
 import { Sidebar } from '../Component/Sidebar/Sidebar';
@@ -8,7 +8,14 @@ export function Home() {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   function productAddCart(cart) {
-    setCarts([cart, ...carts]); 
+    let quantity = 1
+    carts.forEach(e => {
+      if(e === cart) {
+        e.quantity ++;
+      }
+    });
+
+    setCarts([{cart: cart, quantity: quantity}, ...carts]); 
   }
 
   function sidebar() {

@@ -13,10 +13,10 @@ export function Header({ openSidebar, quantityProducts }) {
 
       <input placeholder="Buscar" className="input-search" type="text" />
 
-      <span className="cart">
-        <p className='quantity-items'>{quantityProducts}</p>
+      <div className="cart">
         <img className="cart-icon" onClick={open} src={cart} alt="" />
-      </span>
+        <p className='quantity-items'>{quantityProducts}</p>
+      </div>
     </header>
   );
 }
