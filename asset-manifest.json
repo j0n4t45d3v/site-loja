@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/site-loja/static/css/main.1575ea35.css",
-    "main.js": "/site-loja/static/js/main.b2f537e5.js",
+    "main.css": "/site-loja/static/css/main.3303d783.css",
+    "main.js": "/site-loja/static/js/main.2ab7085b.js",
     "static/media/logo-louja.png": "/site-loja/static/media/logo-louja.a3cb2adf758f68a058ac.png",
     "index.html": "/site-loja/index.html",
-    "main.1575ea35.css.map": "/site-loja/static/css/main.1575ea35.css.map",
-    "main.b2f537e5.js.map": "/site-loja/static/js/main.b2f537e5.js.map"
+    "main.3303d783.css.map": "/site-loja/static/css/main.3303d783.css.map",
+    "main.2ab7085b.js.map": "/site-loja/static/js/main.2ab7085b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1575ea35.css",
-    "static/js/main.b2f537e5.js"
+    "static/css/main.3303d783.css",
+    "static/js/main.2ab7085b.js"
   ]
 }
