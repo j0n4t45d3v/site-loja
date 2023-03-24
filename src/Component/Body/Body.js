@@ -7,10 +7,10 @@ export function Body({ addProductCart }) {
 
   useEffect(() => {
     api.get(url).then((res) => setProduct(res.data.products));
-  }, []);
+  },[]);
 
   function addCart(id) {
-    sessionStorage.setItem('cart', id);
+    sessionStorage.setItem("cart", id)
     addProductCart(id);
   }
   return (
@@ -22,7 +22,7 @@ export function Body({ addProductCart }) {
             <h4 className="title-product">{e.title}</h4>
             <p className="description">{e.description}</p>
             <p className="price-item">R$ {e.price.toFixed(2)}</p>
-            <button className="add-cart" onClick={addCart(e)}>
+            <button className="add-cart" onClick={() => {addCart(e.id)}}>
               +
             </button>
           </div>

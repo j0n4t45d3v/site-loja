@@ -25,6 +25,10 @@
   transition: .6s;
 }
 
+.img{
+  width: 20%;
+}
+
 .main-container{
   position: relative;
   display: flex;
@@ -35,4 +39,12 @@
 
 .products-cart{
   align-self: center;
+}
+
+.produt{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
 }
