@@ -8,14 +8,15 @@ export function Home() {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   function productAddCart(cart) {
-    let quantity = 1
-    carts.forEach(e => {
-      if(e === cart) {
-        e.quantity ++;
+    let quantity = 1;
+    carts.forEach((e) => {
+      if (e.cart === cart) {
+        e.quantity++;
+        return;
       }
     });
+      setCarts([{ cart: cart, quantity: quantity }, ...carts]);
 
-    setCarts([{cart: cart, quantity: quantity}, ...carts]); 
   }
 
   function sidebar() {
@@ -23,9 +24,13 @@ export function Home() {
   }
   return (
     <>
-      {openSidebar ? <Sidebar closeSidebar={sidebar} products={carts}/> : false}
-      <Header openSidebar={sidebar} quantityProducts={carts.length}/>
-      <Body addProductCart={productAddCart}/>
+      {openSidebar ? (
+        <Sidebar closeSidebar={sidebar} products={carts} />
+      ) : (
+        false
+      )}
+      <Header openSidebar={sidebar} quantityProducts={carts.length} />
+      <Body addProductCart={productAddCart} />
     </>
   );
 }

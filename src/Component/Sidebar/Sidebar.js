@@ -10,15 +10,23 @@ export function Sidebar({ closeSidebar, products }) {
 
   useEffect(() => {
     (async () => {
-      const requests = products.map((e) => api.get(`${url}/${e}`));
+      const requests = products.map(async (e) => {
+        const item = await api.get(`${url}/${e.cart}`);
+        const order = { item : item, quantity: e.quantity }
+        return order;
+      });
       const responses = await Promise.all(requests);
-      const data = responses.map((res) => res.data);
+      const data = responses.map((res) => {
+        const order = { product: res.item.data, quantity: res.quantity };
+        return order;
+      });
       setCart(data);
     })();
   }, [products]);
 
   let sum = 0;
 
+  console.log("carrinho: ",cart);
   return (
     <div className="sidebar">
       <button className="close" onClick={close}>
@@ -27,11 +35,12 @@ export function Sidebar({ closeSidebar, products }) {
       <div className="main-container">
         <div className="products-cart">
           {cart.map((e) => {
-            sum += e.price;
+            sum += e.product.price;
             return (
               <div className="produt">
-                <img className="img" src={e.thumbnail} alt="" />
-                <p>{e.title}</p>
+                <img className="img" src={e.product.thumbnail} alt="" />
+                <p>{e.product.title}</p>
+                <p>+{e.quantity}-</p>
               </div>
             );
           })}

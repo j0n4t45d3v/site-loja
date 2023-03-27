@@ -10,7 +10,7 @@ export function Body({ addProductCart }) {
   },[]);
 
   function addCart(id) {
-    sessionStorage.setItem("cart", id)
+    // sessionStorage.setItem("cart", id)
     addProductCart(id);
   }
   return (
