@@ -9,13 +9,18 @@ export function Home() {
 
   function productAddCart(cart) {
     let quantity = 1;
+    let exist= false;
     carts.forEach((e) => {
       if (e.cart === cart) {
+      
         e.quantity++;
+        exist = true
         return;
       }
     });
+    if(!exist){
       setCarts([{ cart: cart, quantity: quantity }, ...carts]);
+    }
 
   }
 

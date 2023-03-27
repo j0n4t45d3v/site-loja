@@ -8,7 +8,7 @@ export function Sidebar({ closeSidebar, products }) {
     closeSidebar();
   }
 
-  useEffect(() => {
+ useEffect(() => {
     (async () => {
       const requests = products.map(async (e) => {
         const item = await api.get(`${url}/${e.cart}`);
@@ -17,16 +17,20 @@ export function Sidebar({ closeSidebar, products }) {
       });
       const responses = await Promise.all(requests);
       const data = responses.map((res) => {
-        const order = { product: res.item.data, quantity: res.quantity };
+        const order = { item: res.item.data, quantity: res.quantity };
         return order;
       });
       setCart(data);
     })();
   }, [products]);
 
+  if (!cart || cart.length === 0) {
+    return null; 
+  }
+
   let sum = 0;
 
-  console.log("carrinho: ",cart);
+  
   return (
     <div className="sidebar">
       <button className="close" onClick={close}>
@@ -34,16 +38,19 @@ export function Sidebar({ closeSidebar, products }) {
       </button>
       <div className="main-container">
         <div className="products-cart">
-          {cart.map((e) => {
-            sum += e.product.price;
-            return (
-              <div className="produt">
-                <img className="img" src={e.product.thumbnail} alt="" />
-                <p>{e.product.title}</p>
-                <p>+{e.quantity}-</p>
-              </div>
-            );
-          })}
+        {cart.map((e) => {
+    if (e !== undefined) {
+      sum += e.item?.price;
+      return [
+        <div className="produt">
+          <img className="img" src={e.item?.thumbnail} alt="" />
+          <p>{e.item?.title}</p>
+          <p>+{e.quantity}-</p>
+        </div>
+      ];
+    }
+    return [];
+  })}
         </div>
         <div className="final-cart">
           <p>Total: {sum.toFixed(2)}</p>
