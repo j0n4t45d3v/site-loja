@@ -31,8 +31,8 @@ export function Sidebar({ closeSidebar, products, dropCart }) {
 
   if (!cart || cart.length === 0) {
     return (
-      <div className="sidebar" onClick={close}>
-          <button className="close">x</button>
+      <div className="sidebar">
+          <button  onClick={close} className="close">x</button>
         <div className="not-found">
           <h1>Nenhum produto no carrinho</h1>
         </div>

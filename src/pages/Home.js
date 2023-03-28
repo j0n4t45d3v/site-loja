@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { Body } from '../Components/Body/Body';
-import { Header } from '../Components/Header/Header';
-import { Sidebar } from '../Components/Sidebar/Sidebar';
+import { useState } from "react";
+import { Body } from "../Components/Body/Body";
+import { Header } from "../Components/Header/Header";
+import { Sidebar } from "../Components/Sidebar/Sidebar";
 
 export function Home() {
   const [carts, setCarts] = useState([]);
@@ -26,6 +26,7 @@ export function Home() {
 
   function clearCart() {
     setCarts([]);
+    setQuantityItems(0);
   }
 
   function sidebar() {
