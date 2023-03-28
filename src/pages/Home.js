@@ -21,9 +21,7 @@ export function Home() {
     if (!exist) {
       setCarts([{ cart: cart, quantity: quantity }, ...carts]);
     }
-
-      setQuantityItems(quantityItems + 1);
-
+    setQuantityItems(quantityItems + 1);
   }
 
   function clearCart() {
