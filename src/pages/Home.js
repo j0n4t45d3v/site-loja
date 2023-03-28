@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Body } from '../Component/Body/Body';
-import { Header } from '../Component/Header/Header';
-import { Sidebar } from '../Component/Sidebar/Sidebar';
+import { Body } from '../Components/Body/Body';
+import { Header } from '../Components/Header/Header';
+import { Sidebar } from '../Components/Sidebar/Sidebar';
 
 export function Home() {
   const [carts, setCarts] = useState([]);
@@ -9,19 +9,21 @@ export function Home() {
 
   function productAddCart(cart) {
     let quantity = 1;
-    let exist= false;
+    let exist = false;
     carts.forEach((e) => {
       if (e.cart === cart) {
-      
         e.quantity++;
-        exist = true
+        exist = true;
         return;
       }
     });
-    if(!exist){
+    if (!exist) {
       setCarts([{ cart: cart, quantity: quantity }, ...carts]);
     }
+  }
 
+  function clearCart(){
+    setCarts([])
   }
 
   function sidebar() {
@@ -30,7 +32,7 @@ export function Home() {
   return (
     <>
       {openSidebar ? (
-        <Sidebar closeSidebar={sidebar} products={carts} />
+        <Sidebar closeSidebar={sidebar} products={carts} dropCart={clearCart}/>
       ) : (
         false
       )}
