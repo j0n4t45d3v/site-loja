@@ -6,6 +6,7 @@ import { Sidebar } from '../Components/Sidebar/Sidebar';
 export function Home() {
   const [carts, setCarts] = useState([]);
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [quantityItems, setQuantityItems] = useState(0);
 
   function productAddCart(cart) {
     let quantity = 1;
@@ -20,10 +21,13 @@ export function Home() {
     if (!exist) {
       setCarts([{ cart: cart, quantity: quantity }, ...carts]);
     }
+
+      setQuantityItems(quantityItems + 1);
+
   }
 
-  function clearCart(){
-    setCarts([])
+  function clearCart() {
+    setCarts([]);
   }
 
   function sidebar() {
@@ -32,11 +36,11 @@ export function Home() {
   return (
     <>
       {openSidebar ? (
-        <Sidebar closeSidebar={sidebar} products={carts} dropCart={clearCart}/>
+        <Sidebar closeSidebar={sidebar} products={carts} dropCart={clearCart} />
       ) : (
         false
       )}
-      <Header openSidebar={sidebar} quantityProducts={carts.length} />
+      <Header openSidebar={sidebar} quantityProducts={quantityItems} />
       <Body addProductCart={productAddCart} />
     </>
   );
