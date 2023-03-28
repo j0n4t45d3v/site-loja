@@ -12,12 +12,13 @@
 }
 
 .input-search {
-  border: 3px solid #b487b2;
-  border-radius: 20px;
+  border: 2px solid #b487b2;
+  border-radius: 10px;
   height: 20%;
   width: 20%;
   background-color: #d9b1d9;
-  font-weight: bold;
+  font-weight: 500;
+  outline: none;
 }
 
 .cart-icon {
