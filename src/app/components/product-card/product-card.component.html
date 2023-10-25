@@ -1,0 +1,12 @@
+<div class="container-card">
+  <img class="img-product" [src]="product.image" alt="" />
+  <p class="name-product">{{product.name}}</p>
+  <p class="product-description">{{product.description}}</p>
+  <div class="container-price">
+    <button  class="add-in-cart" (click)="addProductToCart()">
+      <img class="add-cart-icon" src="/assets/cart.png" alt="">
+      <p>+</p>
+    </button>
+    <p class="price-value">R$ {{ getProductPriceFormated() }}</p>
+  </div>
+</div>

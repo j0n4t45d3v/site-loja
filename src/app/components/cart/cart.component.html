@@ -1,0 +1,12 @@
+<div class="container-content-cart">
+  <ul>
+    <li *ngFor="let product of getCartProducts()">
+      <div class="container-item">
+        <img [src]="product.image" alt="product.name" />
+        <p>{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.price}}</p>
+      </div>
+    </li>
+  </ul>
+</div>

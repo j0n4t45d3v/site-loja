@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<div *ngIf="getCartProducts().length > 0">
+  <app-cart></app-cart>
+</div>
+
+<div *ngIf="getCartProducts().length == 0">
+  <app-not-found [message]="messageNotFound"></app-not-found>
+</div>
+
