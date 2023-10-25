@@ -1,4 +1,30 @@
-.item {
+.container-content-cart {
+  margin-top: 30px;
+}
+
+.container-item {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10;
   box-shadow: 0 0 20px rgba(0, 0, 173, 0.226);
-  border: 1px solid black;
+}
+
+.container-item-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+.container-item-quantity{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
 }

@@ -3,10 +3,20 @@
     <li *ngFor="let product of getCartProducts()">
       <div class="container-item">
         <img [src]="product.image" alt="product.name" />
-        <p>{{product.name}}</p>
-        <p>{{product.description}}</p>
-        <p>{{product.price}}</p>
+        <div class="container-item-info">
+          <p>{{ product.name }}</p>
+          <p>{{ product.description }}</p>
+          <p>R$ {{ product.price.toFixed(2) }}</p>
+        </div>
+        <div class="container-item-quantity">
+          <button (click)="subQuantity()">-</button>
+          <p> {{quantity}} </p>
+          <button (click)="addQuantity()">+</button>
+        </div>
       </div>
     </li>
   </ul>
+  <article>
+    conteudo lateral
+  </article>
 </div>
